@@ -15,5 +15,25 @@ export class ListsController {
         ProxyState.on('lists', saveState)
         ProxyState.on('tasks', _draw)
         ProxyState.on('tasks', saveState)
+
+        loadState()
+        _draw()
+    }
+
+    createList() {
+        window.event.preventDefault()
+        const form = window.event.target
+        const rawList = {
+            name: form.name.value,
+        }
+        console.log(rawList)
+
+        listsService.createList(rawList)
+
+        form.reset()
+    }
+
+    removeList(id) {
+        listsService.removeList(id)
     }
 }

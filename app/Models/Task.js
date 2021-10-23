@@ -5,6 +5,7 @@ export class Task {
     constructor(data) {
         this.id = data.id || generateId()
         this.name = data.name
+        this.tasksRemaining = data.tasksRemaining
         this.listID = data.listID
     }
 

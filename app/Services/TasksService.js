@@ -5,7 +5,7 @@ class TasksService {
     createTask(taskData) {
 
         const task = new Task(taskData)
-        ProxyState.tasks = [...ProxyState.tasks, task]
+        ProxyState.task = [...ProxyState.task, task]
     }
 }
 

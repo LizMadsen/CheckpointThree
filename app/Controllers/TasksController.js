@@ -3,7 +3,6 @@ import { tasksService } from "../Services/TasksService.js"
 
 export class TasksController {
     constructor() {
-
     }
 
     createTask(lID) {
@@ -17,5 +16,4 @@ export class TasksController {
         console.log('creating task', taskData)
         tasksService.createTask(taskData)
     }
-
 }

@@ -1,3 +1,12 @@
+header {
+    background-color: #ebc4e2;
+    color: rgb(68, 67, 82)
+}
+
 body {
-    background-color: rgb(232, 234, 240);
+    background-color: #e8eaf0;
+}
+
+.tasks {
+    font-size: large;
 }

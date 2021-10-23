@@ -16,10 +16,10 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select justify-content-center">
+    <nav class="navbar navbar-expand no-select justify-content-center">
       <a class="navbar-brand ms-3" href="#">
         <span class="ms-2">
-          <h3>TaskMaster: Taking you to task</h3>
+          <h3 class="text-dark">TaskMaster: Taking you to task</h3>
         </span>
       </a>
     </nav>
@@ -31,38 +31,59 @@
           <label for="" class="form-label">List Name</label>
           <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="">
         </div>
-        <div class="col-3"><button class="btn btn-primary  w-100 p-2">Submit List</button></div>
+        <div class="col-3"><button class="btn btn-primary  w-75 p-2">Submit List</button></div>
       </form>
       <div class="row align-items-end">
         <div class="col-12">
-          <div id="lists" class="row mt-5 justify-content-around">
-            <!-- LIST TEMPLATE -->
-            <!-- <div class="col-3 bg-light shadow rounded">
-                  <div class="row">
-                    <div class="col-12 bg-primary p-5"> Pizza Name </div>
-                    <div class="col-12 p-4">
-                      <b>Pie Fixings</b>
-                      <div class="row  bg-light darken-20  shadow-inset">
-                        <div class="col-12">topping</div>
-                        <div class="col-12">topping</div>
-                      </div>
-                    </div>
-                    <div class="col-12 p-4 ">
-                      <b>Toppings</b>
-                      <div class="row  bg-light darken-20  shadow-inset">
-                        <div class="col-12">topping</div>
-                        <div class="col-12">topping</div>
-                        <div class="col-12">topping</div>
-                        <div class="col-12">topping</div>
-                      </div>
-                    </div>
-                    <div class="col-12 text-end">Total: $47.95</div>
+          <form action="">
+            <div id="lists" class="row mt-5 justify-content-around">
+              <div class="col-3 bg-light shadow rounded">
+                <div class="row">
+                  <div class="col-12 bg-primary p-3">
+                    <h3 class="text-center">List Name</h3>
+                    <div class="col-12 text-center">0/4</div>
                   </div>
-                </div> -->
-            <!-- PIZZA TEMPLATE -->
-          </div>
+                  <div class="col-12 p-4 ">
+                    <div class="row  bg-light darken-20  shadow-inset">
+                      <div class="col-12">Task</div>
+                      <div class="col-12">Task</div>
+                      <div class="col-12">Task</div>
+                      <div class="col-12">Task</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </form>
+
+          <!-- <div class="col-12 p-4 ">
+              <div class="row tasks bg-light darken-20  shadow-inset">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" name="" id="" value="checkedValue" class="custom-control-input">
+                  <span class="custom-control-indicator">Task</span>
+                  <span class="custom-control-description"></span>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" name="" id="" value="checkedValue" class="custom-control-input">
+                  <span class="custom-control-indicator">Task</span>
+                  <span class="custom-control-description"></span>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" name="" id="" value="checkedValue" class="custom-control-input">
+                  <span class="custom-control-indicator">Task</span>
+                  <span class="custom-control-description"></span>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" name="" id="" value="checkedValue" class="custom-control-input">
+                  <span class="custom-control-indicator">Task</span>
+                  <span class="custom-control-description"></span>
+                </label>
+              </div>
+            </div> -->
+
+
         </div>
       </div>
+    </div>
     </div>
   </main>
   <footer class="bg-dark text-light">
