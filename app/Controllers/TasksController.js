@@ -16,4 +16,12 @@ export class TasksController {
 
         tasksService.createTask(taskData)
     }
+
+    removeTask(id, listID) {
+        let result = window.confirm("Are you sure you want to delete this task?")
+        console.log(result)
+        if (result) {
+            tasksService.removeTask(id, listID)
+        }
+    }
 }

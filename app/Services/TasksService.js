@@ -8,6 +8,12 @@ class TasksService {
         banana.numberOfTasks++
         const task = new Task(taskData)
         ProxyState.tasks = [...ProxyState.tasks, task]
+    }
+
+    removeTask(id, listID) {
+        let banana = ProxyState.lists.find(l => l.id = listID)
+        banana.numberOfTasks--
+        ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
         console.log(ProxyState.lists)
     }
 }

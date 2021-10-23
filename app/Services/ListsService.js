@@ -12,7 +12,8 @@ class ListsService {
     }
     removeList(id) {
         ProxyState.tasks = ProxyState.tasks.filter(t => t.listID != id)
-        ProxyState.lists = ProxyState._listeners.filter(l => l.id != id)
+        ProxyState.lists = ProxyState.lists.filter(l => l.id != id)
+        ProxyState._listeners = ProxyState._listeners.filter(l => l.id != id)
     }
 
 }

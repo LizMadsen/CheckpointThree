@@ -10,3 +10,7 @@ body {
 .tasks {
     font-size: large;
 }
+
+.trashcan {
+    color: rgb(200, 50, 50)
+}

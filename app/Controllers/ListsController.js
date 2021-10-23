@@ -16,7 +16,7 @@ export class ListsController {
         ProxyState.on('tasks', _draw)
         ProxyState.on('tasks', saveState)
 
-        loadState()
+        // loadState()
         _draw()
     }
 
@@ -26,7 +26,7 @@ export class ListsController {
         console.log(form)
         const rawList = {
             name: form.name.value,
-            // numberOfTasks: 0,
+            numberOfTasks: 0,
         }
 
         listsService.createList(rawList)
@@ -36,6 +36,10 @@ export class ListsController {
     }
 
     removeList(id) {
-        listsService.removeList(id)
+        let result = window.confirm("Are you sure you want to delete this list?")
+        console.log(result)
+        if (result) {
+            listsService.removeList(id)
+        }
     }
 }
