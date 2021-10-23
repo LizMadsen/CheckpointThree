@@ -7,15 +7,10 @@ export class List {
         this.name = data.name
     }
 
-
-
     getTask() {
         const task = ProxyState.task.filter(t => this.id == t.listId)
         let template = ''
         return template
     }
-
-
-
 
 }
