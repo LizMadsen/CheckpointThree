@@ -1,5 +1,14 @@
+import { List } from "./Models/List.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
+
+
+const testList = new List(
+  {
+    name: "Chores List",
+    tasks: "0/1"
+  }
+)
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
