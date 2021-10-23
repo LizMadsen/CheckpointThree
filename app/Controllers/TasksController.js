@@ -1,19 +1,19 @@
 import { tasksService } from "../Services/TasksService.js"
+import { ProxyState } from "../AppState.js"
 
 
 export class TasksController {
     constructor() {
     }
 
-    createTask(lID) {
+    createTask(listID) {
         window.event.preventDefault()
         const form = window.event.target
         let taskData = {
             name: form.taskName.value,
-            listID: lID
+            listID: listID
         }
 
-        console.log('creating task', taskData)
         tasksService.createTask(taskData)
     }
 }

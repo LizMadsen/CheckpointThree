@@ -23,13 +23,15 @@ export class ListsController {
     createList() {
         window.event.preventDefault()
         const form = window.event.target
+        console.log(form)
         const rawList = {
             name: form.name.value,
+            // numberOfTasks: 0,
         }
-        console.log(rawList)
 
         listsService.createList(rawList)
 
+        // @ts-ignore
         form.reset()
     }
 

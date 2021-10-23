@@ -1,7 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { List } from "../Models/List.js"
-
-
+import { Task } from "../Models/Task.js";
 
 
 export function saveState() {
@@ -21,7 +20,7 @@ export function loadState() {
     // check for if data exists, cause we only want to try this if it does, will error otherwise
     if (data != null) {
         // the data gets saved as POJOs so has to be turned back into pizza classes
-        ProxyState.lists = data.pizzas.map(p => new Lists(p))
-        ProxyState.tasks = data.toppings.map(t => new Tasks(t))
+        ProxyState.lists = data.lists.map(p => new List(p))
+        ProxyState.tasks = data.tasks.map(t => new Task(t))
     }
 }
