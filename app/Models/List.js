@@ -6,16 +6,19 @@ export class List {
     constructor(data) {
         this.id = data.id || generateId()
         this.name = data.name
+        this.color = data.color
+        this.tasksRemaining = data.tasksRemaining
         this.numberOfTasks = data.numberOfTasks
     }
 
     get Template() {
         return `
         <div class="col-3 bg-light shadow rounded m-1">
-            <div class="row">
-                <div class="col-12 bg-primary p-5 text-center"><h4>${this.name}</h4>
+            <div class="row ">
+                <div class="col-12 bg-p-3 text-center" style="background-color: ${this.color}">
+                <h4> </input>${this.name}</h4>
                 <div class="col-12 text-center">
-                    ${this.numberOfTasks}
+                    ${this.tasksRemaining} / ${this.numberOfTasks}
                 </div>
                 </div>
                 <button class="btn btn-success" onclick="app.listsController.removeList('${this.id}')" > Remove List
@@ -27,9 +30,9 @@ export class List {
             </div>
             <form class="row align-items-end" onsubmit="app.tasksController.createTask('${this.id}')">
                 <div class="col-10">
-                    <input type="text" class="form-control" name="taskName" id="" aria-describedby="helpId" placeholder="Add task">
+                    <input type="text" class="form-control my-2" name="taskName" id="" aria-describedby="helpId" placeholder="Add task" pattern=".{3,50}">
                 </div>
-                <button class="btn btn-info col-2"> Add
+                <button class="btn addTaskButton btn-info my-2"> Add
                 </button>
             </form>
          </div>

@@ -8,7 +8,7 @@ export function saveState() {
     // JSON.Stringiy turns the data into a special version of a string
     localStorage.setItem('ListApp', JSON.stringify({
         lists: ProxyState.lists,
-        tasks: ProxyState.tasks
+        tasks: ProxyState.tasks,
     }))
 }
 

@@ -16,17 +16,21 @@ export class ListsController {
         ProxyState.on('tasks', _draw)
         ProxyState.on('tasks', saveState)
 
-        // loadState()
+        //loadState()
         _draw()
     }
 
     createList() {
         window.event.preventDefault()
         const form = window.event.target
-        console.log(form)
+        let bgColor = document.getElementById('colorpicker').getAttribute('value')
+        console.log(bgColor)
         const rawList = {
+            // @ts-ignore
             name: form.name.value,
+            color: bgColor,
             numberOfTasks: 0,
+            tasksRemaining: 0
         }
 
         listsService.createList(rawList)

@@ -30,7 +30,11 @@
     <div class="container">
       <form class="row align-items-end" onsubmit="app.listsController.createList()">
         <div class="col-3 mt-4">
-          <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="List Name">
+          <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="List Name"
+            pattern=".{3,15}">
+        </div>
+        <div class="col-1 mt-4">
+          <input type="color" id="colorpicker" value="#FFFFFF">
         </div>
         <div class="col-3"><button class="btn btn-primary  w-75 p-2">Submit List</button></div>
       </form>

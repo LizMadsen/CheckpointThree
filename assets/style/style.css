@@ -12,5 +12,14 @@ body {
 }
 
 .trashcan {
-    color: rgb(200, 50, 50)
+    color: rgb(200, 50, 50);
+}
+
+.trashButton {
+    border: none;
+}
+
+.addTaskButton {
+    height: 40px;
+    width: 50px;
 }

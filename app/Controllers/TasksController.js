@@ -10,11 +10,17 @@ export class TasksController {
         window.event.preventDefault()
         const form = window.event.target
         let taskData = {
+            // @ts-ignore
             name: form.taskName.value,
-            listID: listID
+            listID: listID,
+            isChecked: false
         }
 
         tasksService.createTask(taskData)
+    }
+
+    toggleCheckbox(check, id) {
+        tasksService.toggleCheckbox(check, id)
     }
 
     removeTask(id, listID) {
