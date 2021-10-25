@@ -7,8 +7,6 @@ export class List {
         this.id = data.id || generateId()
         this.name = data.name
         this.color = data.color
-        this.tasksRemaining = data.tasksRemaining
-        this.numberOfTasks = data.numberOfTasks
     }
 
     get Template() {
@@ -46,6 +44,14 @@ export class List {
             template += t.Template
         })
         return template
+    }
+
+    get tasksRemaining() {
+        return ProxyState.tasks.filter(t => this.id == t.listID && t.isChecked).length
+    }
+
+    get numberOfTasks() {
+        return ProxyState.tasks.filter(t => this.id == t.listID).length
     }
 
 }

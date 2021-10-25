@@ -6,16 +6,16 @@ class TasksService {
     createTask(taskData) {
         console.log(taskData)
         let banana = ProxyState.lists.find(l => l.id == taskData.listID)
-        banana.numberOfTasks++
-        banana.tasksRemaining++
+        // banana.numberOfTasks++
+        // banana.tasksRemaining++
         const task = new Task(taskData)
         ProxyState.tasks = [...ProxyState.tasks, task]
     }
 
     removeTask(id, listID) {
         let banana = ProxyState.lists.find(l => l.id == listID)
-        banana.numberOfTasks--
-        banana.tasksRemaining--
+        // banana.numberOfTasks--
+        // banana.tasksRemaining--
         ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
     }
 
@@ -25,6 +25,7 @@ class TasksService {
         let task = ProxyState.tasks[taskIndex]
         task.isChecked = !task.isChecked
         ProxyState.tasks[taskIndex] = task
+        ProxyState.tasks = ProxyState.tasks
         saveState();
     }
 }

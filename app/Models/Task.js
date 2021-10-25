@@ -11,7 +11,7 @@ export class Task {
     get Template() {
         return `
         <div class="col-10">
-            <input id="checkbox" type="checkbox" class="checkbox" value="${this.isChecked}" onchange="app.tasksController.toggleCheckbox(this, '${this.id}')"/> ${this.name}
+            <input id="checkbox" type="checkbox" class="checkbox" ${this.isChecked ? 'checked' : ''} onchange="app.tasksController.toggleCheckbox(this, '${this.id}')"/> ${this.name}
             <button class="trashButton">
                 <i class="trashcan fas fa-trash" onclick="app.tasksController.removeTask('${this.id}', '${this.listID}')">
                 </i>
