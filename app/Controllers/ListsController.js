@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { listsService } from "../Services/ListsService.js";
-import { loadState, saveState } from "../utils/LocalStorage.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 function _draw() {
     const lists = ProxyState.lists
