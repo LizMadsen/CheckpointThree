@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { Task } from "../Models/Task.js";
-import { loadState, saveState } from "../utils/LocalStorage.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 class TasksService {
     createTask(taskData) {
