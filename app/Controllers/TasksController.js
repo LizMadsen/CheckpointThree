@@ -19,8 +19,8 @@ export class TasksController {
         tasksService.createTask(taskData)
     }
 
-    toggleCheckbox(check, id) {
-        tasksService.toggleCheckbox(check, id)
+    toggleCheckbox(checkbox, id) {
+        tasksService.toggleCheckbox(checkbox, id)
     }
 
     removeTask(id, listID) {

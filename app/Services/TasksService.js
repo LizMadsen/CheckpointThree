@@ -1,10 +1,11 @@
 import { ProxyState } from "../AppState.js";
 import { Task } from "../Models/Task.js";
+import { loadState, saveState } from "../utils/LocalStorage.js"
 
 class TasksService {
     createTask(taskData) {
         console.log(taskData)
-        let banana = ProxyState.lists.find(l => l.id = taskData.listID)
+        let banana = ProxyState.lists.find(l => l.id == taskData.listID)
         banana.numberOfTasks++
         banana.tasksRemaining++
         const task = new Task(taskData)
@@ -12,16 +13,19 @@ class TasksService {
     }
 
     removeTask(id, listID) {
-        let banana = ProxyState.lists.find(l => l.id = listID)
+        let banana = ProxyState.lists.find(l => l.id == listID)
         banana.numberOfTasks--
         banana.tasksRemaining--
         ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
     }
 
-    toggleCheckbox(check, id) {
-        console.log(check.checked)
-        let task = ProxyState.tasks.find(l => l.id == id)
-        task.isChecked = check.checked
+    toggleCheckbox(checkbox, id) {
+        console.log(checkbox.checked)
+        let taskIndex = ProxyState.tasks.findIndex(l => l.id == id)
+        let task = ProxyState.tasks[taskIndex]
+        task.isChecked = !task.isChecked
+        ProxyState.tasks[taskIndex] = task
+        saveState();
     }
 }
 
