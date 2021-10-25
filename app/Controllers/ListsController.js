@@ -9,6 +9,8 @@ function _draw() {
     document.getElementById('lists').innerHTML = template
 }
 
+let bgColor = ''
+
 export class ListsController {
     constructor() {
         ProxyState.on('lists', _draw)
@@ -23,8 +25,8 @@ export class ListsController {
     createList() {
         window.event.preventDefault()
         const form = window.event.target
-        let bgColor = document.getElementById('colorpicker').getAttribute('value')
-        console.log(bgColor)
+        //let bgColor = document.getElementById('colorpicker').getAttribute('value')
+        //console.log(bgColor)
         const rawList = {
             // @ts-ignore
             name: form.name.value,
@@ -45,5 +47,9 @@ export class ListsController {
         if (result) {
             listsService.removeList(id)
         }
+    }
+
+    colorPicked(value) {
+        bgColor = value;
     }
 }

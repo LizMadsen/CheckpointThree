@@ -19,11 +19,9 @@ class TasksService {
     }
 
     toggleCheckbox(check, id) {
+        console.log(check.checked)
         let task = ProxyState.tasks.find(l => l.id == id)
-        console.log(task)
         task.isChecked = check.checked
-        console.log(check)
-        console.log(ProxyState.tasks)
     }
 }
 
